@@ -1,4 +1,4 @@
-# Changelog
+# Architecture Principles
 
 ## Purpose
 This document defines the approved baseline for **osb-engineering-standards**.

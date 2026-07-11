@@ -1,11 +1,20 @@
-# Security Policy
+# Security
 
-## Reporting vulnerabilities
-Do not open public issues for vulnerabilities. Report privately to the security owner.
+## Purpose
+This document defines the approved baseline for **osb-engineering-standards**.
 
-## Minimum standards
-- No hardcoded secrets.
-- MFA required for maintainers.
-- Branch protection required on `main`.
-- All changes require review.
-- Dependency and secret scanning enabled.
+## Requirements
+1. Follow the OmSaravanaBhava Engineering Standards.
+2. Use secure defaults and least privilege.
+3. Include automated validation in CI.
+4. Record material decisions through ADRs.
+5. Maintain traceability from requirement to test evidence.
+
+## Acceptance criteria
+- Content is reviewed by the repository owner.
+- Security and operational impacts are documented.
+- Examples contain no credentials or personal data.
+- Implementation remains compatible with the approved architecture.
+
+## Review cadence
+Review at least every six months or after a major architectural change.

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.omsaravanabhava.org/audit-event.schema.json",
+  "title": "OSB Audit Event",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["eventId", "eventType", "occurredAt", "actor", "resource", "outcome", "correlationId"],
+  "properties": {
+    "eventId": {"type": "string", "format": "uuid"},
+    "eventType": {"type": "string", "pattern": "^[a-z0-9]+(?:[._-][a-z0-9]+)*$"},
+    "occurredAt": {"type": "string", "format": "date-time"},
+    "actor": {"type": "string", "minLength": 1},
+    "resource": {"type": "string", "minLength": 1},
+    "action": {"type": ["string", "null"]},
+    "outcome": {"enum": ["SUCCESS", "FAILURE", "DENIED", "PARTIAL"]},
+    "correlationId": {"type": "string", "minLength": 8},
+    "sourceIp": {"type": ["string", "null"]},
+    "details": {"type": "object"}
+  }
+}

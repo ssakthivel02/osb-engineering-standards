@@ -1,0 +1,14 @@
+{
+  "eventId": "fa912900-e594-4b4e-a066-b2974b90f548",
+  "assetId": "osb:asset:sample-001",
+  "eventType": "FIXITY_CHECK",
+  "occurredAt": "2026-07-28T00:00:00Z",
+  "agent": "osb-fixity-validator",
+  "tool": "sha256sum",
+  "toolVersion": "9.4",
+  "outcome": "SUCCESS",
+  "sourceHash": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
+  "outputHash": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
+  "evidence": ["https://example.org/preservation/fixity/sample-001"],
+  "notes": null
+}

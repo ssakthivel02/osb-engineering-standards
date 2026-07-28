@@ -1,0 +1,20 @@
+{
+  "rightsId": "8b4cb4d8-3d7e-4bb8-a3ce-9be4e36faaf0",
+  "assetId": "osb:asset:sample-001",
+  "status": "LICENSED",
+  "holder": "Sample Rights Holder",
+  "jurisdiction": "GB",
+  "licence": "CC-BY-4.0",
+  "permissions": {
+    "display": true,
+    "download": true,
+    "modify": true,
+    "commercialUse": true,
+    "embedding": true,
+    "training": false
+  },
+  "evidence": ["https://example.org/rights/sample-001"],
+  "reviewedAt": "2026-07-28T00:00:00Z",
+  "expiresAt": null,
+  "reviewer": "rights-reviewer"
+}

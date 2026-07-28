@@ -1,0 +1,10 @@
+{
+  "privacyId": "privacy:public-content",
+  "classification": "PUBLIC",
+  "containsPersonalData": false,
+  "containsChildrenData": false,
+  "containsReligiousBeliefData": false,
+  "lawfulBasis": "NOT_APPLICABLE",
+  "retentionDecision": "Retain while published; reassess on withdrawal or legal-hold event.",
+  "dpiaRequired": false
+}

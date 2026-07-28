@@ -1,0 +1,12 @@
+{
+  "eventId": "55d50a10-4635-44e0-9dd6-c6340ec2d965",
+  "eventType": "content.review.approved",
+  "occurredAt": "2026-07-28T00:00:00Z",
+  "actor": "editor-001",
+  "resource": "osb:content:sample-001",
+  "action": "APPROVE",
+  "outcome": "SUCCESS",
+  "correlationId": "corr-20260728-001",
+  "sourceIp": null,
+  "details": {"reviewStatus": "APPROVED"}
+}

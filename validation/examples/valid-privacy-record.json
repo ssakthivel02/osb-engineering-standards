@@ -1,0 +1,15 @@
+{
+  "privacyId": "d05b623e-5e5b-47dd-954f-6f99a6abac62",
+  "subjectType": "ADULT",
+  "classification": "CONFIDENTIAL",
+  "purpose": "Account administration",
+  "lawfulBasis": "CONTRACT",
+  "specialCategory": false,
+  "childData": false,
+  "internationalTransfer": false,
+  "retentionDecision": "Retain according to approved account-record schedule",
+  "deletionBlockedByLegalHold": false,
+  "reviewedAt": "2026-07-28T00:00:00Z",
+  "reviewer": "privacy-reviewer",
+  "notes": null
+}

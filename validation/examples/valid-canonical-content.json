@@ -1,0 +1,15 @@
+{
+  "id": "3f63f3cc-5f72-4b45-b246-8c91dd332748",
+  "canonicalUri": "https://ontology.omsaravanabhava.org/deity/Murugan",
+  "contentType": "DEITY_PROFILE",
+  "title": "Murugan",
+  "language": "en",
+  "editorialStatus": "VERIFIED",
+  "claims": [],
+  "provenance": {
+    "sourceType": "EDITORIAL_RECORD",
+    "sourceReference": "OSB-SOURCE-0001",
+    "reviewedBy": "domain-reviewer",
+    "reviewedAt": "2026-07-28T00:00:00Z"
+  }
+}

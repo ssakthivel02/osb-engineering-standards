@@ -1,0 +1,71 @@
+version: 1.0.0
+status: implementation-baseline
+standards:
+  - id: OSB-CDS
+    title: Canonical Data Standard
+    owner: data-governance
+    implementation_state: specified
+  - id: OSB-MDS
+    title: Metadata Standard
+    owner: data-governance
+    implementation_state: specified
+  - id: OSB-ONT
+    title: Enterprise Ontology Standard
+    owner: ontology-governance
+    implementation_state: specified
+  - id: OSB-CV
+    title: Controlled Vocabulary Standard
+    owner: information-architecture
+    implementation_state: partial
+  - id: OSB-API
+    title: Enterprise API Standard
+    owner: platform-engineering
+    implementation_state: partial
+  - id: OSB-RAG
+    title: Retrieval and RAG Standard
+    owner: ai-engineering
+    implementation_state: specified
+  - id: OSB-SEARCH
+    title: Enterprise Search Standard
+    owner: search-engineering
+    implementation_state: specified
+  - id: OSB-MEDIA
+    title: Digital Asset and Media Standard
+    owner: media-engineering
+    implementation_state: specified
+  - id: OSB-INFRA
+    title: Infrastructure Standard
+    owner: platform-engineering
+    implementation_state: partial
+  - id: OSB-SECURITY
+    title: Security Standard
+    owner: security
+    implementation_state: partial
+  - id: OSB-DEVSECOPS
+    title: DevSecOps Standard
+    owner: platform-engineering
+    implementation_state: partial
+  - id: OSB-DATA-GOVERNANCE
+    title: Data Governance Standard
+    owner: data-governance
+    implementation_state: specified
+  - id: OSB-OPERATIONS
+    title: Operations Standard
+    owner: operations
+    implementation_state: specified
+  - id: OSB-QA
+    title: Testing and Quality Standard
+    owner: quality-engineering
+    implementation_state: partial
+  - id: OSB-COMPLIANCE
+    title: Compliance Legal and Rights Standard
+    owner: compliance
+    implementation_state: specified
+  - id: OSB-DEVELOPER
+    title: Developer Platform and Engineering Handbook
+    owner: engineering-enablement
+    implementation_state: partial
+  - id: OSB-PRESERVATION
+    title: Digital Preservation Standard
+    owner: preservation
+    implementation_state: specified

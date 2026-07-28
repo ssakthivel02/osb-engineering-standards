@@ -1,0 +1,26 @@
+name: Validate OSB Standards
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: validate-standards-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Confirm Python runtime
+        run: python3 --version
+      - name: Install validation dependencies
+        run: python3 -m pip install --disable-pip-version-check --requirement requirements-validation.txt
+      - name: Validate standards repository
+        run: python3 scripts/validate_repository.py

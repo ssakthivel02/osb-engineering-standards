@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.omsaravanabhava.org/canonical-content.schema.json",
+  "title": "OSB Canonical Content",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "canonicalUri", "contentType", "title", "language", "editorialStatus", "provenance"],
+  "properties": {
+    "id": {"type": "string", "format": "uuid"},
+    "canonicalUri": {"type": "string", "format": "uri"},
+    "contentType": {"type": "string", "minLength": 1},
+    "title": {"type": "string", "minLength": 1, "maxLength": 500},
+    "language": {"type": "string", "pattern": "^[a-z]{2,3}(-[A-Za-z0-9]+)*$"},
+    "editorialStatus": {"enum": ["DRAFT", "PENDING_REVIEW", "VERIFIED", "PUBLISHED", "ARCHIVED", "DEPRECATED"]},
+    "claims": {"type": "array", "items": {"type": "object"}},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sourceType", "sourceReference"],
+      "properties": {
+        "sourceType": {"type": "string", "minLength": 1},
+        "sourceReference": {"type": "string", "minLength": 1},
+        "reviewedBy": {"type": "string"},
+        "reviewedAt": {"type": "string", "format": "date-time"}
+      }
+    }
+  }
+}

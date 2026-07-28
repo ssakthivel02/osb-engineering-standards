@@ -1,0 +1,37 @@
+version: 1.1.0
+schemas:
+  - id: canonical-content
+    path: schemas/canonical-content.schema.json
+    draft: '2020-12'
+    owner: data-governance
+    examples:
+      valid: validation/examples/valid-canonical-content.json
+  - id: rights-record
+    path: schemas/rights-record.schema.json
+    draft: '2020-12'
+    owner: compliance
+    examples:
+      valid: validation/examples/valid-rights-record.json
+  - id: privacy-record
+    path: schemas/privacy-record.schema.json
+    draft: '2020-12'
+    owner: privacy
+    examples:
+      valid: validation/examples/valid-privacy-record.json
+  - id: audit-event
+    path: schemas/audit-event.schema.json
+    draft: '2020-12'
+    owner: security
+    examples:
+      valid: validation/examples/valid-audit-event.json
+  - id: preservation-event
+    path: schemas/preservation-event.schema.json
+    draft: '2020-12'
+    owner: preservation
+    examples:
+      valid: validation/examples/valid-preservation-event.json
+rules:
+  unique_ids: true
+  existing_paths: true
+  https_ids: true
+  additional_properties_explicit: true

@@ -1,0 +1,22 @@
+version: 1.0.0
+schemas:
+  - id: canonical-content
+    path: schemas/canonical-content.schema.json
+    draft: '2020-12'
+    owner: data-governance
+    required_examples: true
+  - id: rights-record
+    path: schemas/rights-record.schema.json
+    draft: '2020-12'
+    owner: compliance
+    required_examples: true
+  - id: audit-event
+    path: schemas/audit-event.schema.json
+    draft: '2020-12'
+    owner: security
+    required_examples: true
+rules:
+  unique_ids: true
+  existing_paths: true
+  https_ids: true
+  additional_properties_explicit: true

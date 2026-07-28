@@ -21,10 +21,11 @@ def load_yaml(path: Path):
         return yaml.safe_load(handle)
 
 
-def validate_registry() -> None:
+def validate_registry() -> list[dict]:
     registry = load_yaml(ROOT / "SCHEMA_REGISTRY.yaml")
     seen: set[str] = set()
-    for item in registry.get("schemas", []):
+    entries = registry.get("schemas", [])
+    for item in entries:
         schema_id = item.get("id")
         if not schema_id or schema_id in seen:
             ERRORS.append(f"Duplicate or missing schema id: {schema_id}")
@@ -32,6 +33,10 @@ def validate_registry() -> None:
         target = ROOT / item.get("path", "")
         if not target.is_file():
             ERRORS.append(f"Registered schema missing: {target.relative_to(ROOT)}")
+        valid_example = ROOT / item.get("examples", {}).get("valid", "")
+        if not valid_example.is_file():
+            ERRORS.append(f"Registered valid example missing for {schema_id}: {valid_example.relative_to(ROOT)}")
+    return entries
 
 
 def validate_json_files() -> None:
@@ -42,28 +47,43 @@ def validate_json_files() -> None:
             ERRORS.append(f"Invalid JSON {path.relative_to(ROOT)}: {exc}")
 
 
-def validate_fixture() -> None:
-    schema_path = ROOT / "schemas/canonical-content.schema.json"
-    fixture_path = ROOT / "validation/examples/valid-canonical-content.json"
-    if not schema_path.exists() or not fixture_path.exists():
-        return
-    schema = json.loads(schema_path.read_text(encoding="utf-8"))
-    fixture = json.loads(fixture_path.read_text(encoding="utf-8"))
-    validator = Draft202012Validator(schema, format_checker=FormatChecker())
-    for error in sorted(validator.iter_errors(fixture), key=lambda item: list(item.path)):
-        ERRORS.append(f"Fixture validation failed at {list(error.path)}: {error.message}")
+def validate_schema_metadata(schema_path: Path, schema: dict) -> None:
+    if not str(schema.get("$id", "")).startswith("https://"):
+        ERRORS.append(f"Schema $id must use HTTPS: {schema_path.relative_to(ROOT)}")
+    if schema.get("$schema") != "https://json-schema.org/draft/2020-12/schema":
+        ERRORS.append(f"Schema draft mismatch: {schema_path.relative_to(ROOT)}")
+    if "additionalProperties" not in schema:
+        ERRORS.append(f"Schema must explicitly declare additionalProperties: {schema_path.relative_to(ROOT)}")
+    for error in Draft202012Validator.check_schema(schema) or []:
+        ERRORS.append(f"Invalid schema {schema_path.relative_to(ROOT)}: {error}")
+
+
+def validate_examples(entries: list[dict]) -> None:
+    for item in entries:
+        schema_path = ROOT / item["path"]
+        example_path = ROOT / item["examples"]["valid"]
+        if not schema_path.is_file() or not example_path.is_file():
+            continue
+        schema = json.loads(schema_path.read_text(encoding="utf-8"))
+        example = json.loads(example_path.read_text(encoding="utf-8"))
+        validate_schema_metadata(schema_path, schema)
+        validator = Draft202012Validator(schema, format_checker=FormatChecker())
+        for error in sorted(validator.iter_errors(example), key=lambda value: list(value.path)):
+            ERRORS.append(
+                f"Example {example_path.relative_to(ROOT)} failed at {list(error.path)}: {error.message}"
+            )
 
 
 def main() -> int:
-    validate_registry()
+    entries = validate_registry()
     validate_json_files()
-    validate_fixture()
+    validate_examples(entries)
     if ERRORS:
         print("OSB validation failed:")
         for error in ERRORS:
             print(f"- {error}")
         return 1
-    print("OSB engineering standards validation passed")
+    print(f"OSB engineering standards validation passed ({len(entries)} schemas)")
     return 0
 
 

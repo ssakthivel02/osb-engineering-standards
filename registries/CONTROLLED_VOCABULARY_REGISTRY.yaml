@@ -1,0 +1,18 @@
+version: 1.0.0
+vocabularies:
+  - id: editorial-statuses
+    path: vocabularies/editorial-statuses.json
+    owner: editorial
+  - id: rights-statuses
+    path: vocabularies/rights-statuses.json
+    owner: compliance
+  - id: privacy-levels
+    path: vocabularies/privacy-levels.json
+    owner: privacy
+  - id: claim-types
+    path: vocabularies/claim-types.json
+    owner: content-governance
+rules:
+  values_are_upper_snake_case: true
+  deprecated_terms_are_retained: true
+  replacement_reference_required: true

@@ -1,0 +1,13 @@
+{
+  "id": "editorial-statuses",
+  "version": "1.0.0",
+  "values": [
+    {"code": "DRAFT", "label": "Draft", "terminal": false},
+    {"code": "PENDING_REVIEW", "label": "Pending review", "terminal": false},
+    {"code": "VERIFIED", "label": "Verified", "terminal": false},
+    {"code": "PUBLISHED", "label": "Published", "terminal": false},
+    {"code": "FLAGGED_FOR_CORRECTION", "label": "Flagged for correction", "terminal": false},
+    {"code": "ARCHIVED", "label": "Archived", "terminal": true},
+    {"code": "DEPRECATED", "label": "Deprecated", "terminal": true}
+  ]
+}

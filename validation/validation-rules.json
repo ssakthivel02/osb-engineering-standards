@@ -1,0 +1,12 @@
+{
+  "version": "1.0.0",
+  "rules": [
+    {"id": "VAL-001", "description": "Every JSON file must parse successfully", "severity": "error"},
+    {"id": "VAL-002", "description": "Every schema must declare JSON Schema 2020-12", "severity": "error"},
+    {"id": "VAL-003", "description": "Vocabulary codes must be unique upper snake case", "severity": "error"},
+    {"id": "VAL-004", "description": "Public-domain assertions require evidence", "severity": "error"},
+    {"id": "VAL-005", "description": "Embedding and model-training permissions are evaluated separately", "severity": "error"},
+    {"id": "VAL-006", "description": "Published canonical content must reference source evidence", "severity": "error"},
+    {"id": "VAL-007", "description": "No secret-like files or credentials may be committed", "severity": "error"}
+  ]
+}

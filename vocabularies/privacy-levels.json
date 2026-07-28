@@ -1,0 +1,10 @@
+{
+  "id": "privacy-levels",
+  "version": "1.0.0",
+  "values": [
+    {"code": "PUBLIC", "access": "anonymous"},
+    {"code": "INTERNAL", "access": "authenticated"},
+    {"code": "CONFIDENTIAL", "access": "authorised-role"},
+    {"code": "RESTRICTED", "access": "explicit-approval"}
+  ]
+}

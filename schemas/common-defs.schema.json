@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.omsaravanabhava.org/common-defs.schema.json",
+  "title": "OSB Common Definitions",
+  "$defs": {
+    "canonicalId": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]{2,63}:[A-Za-z0-9._~-]{1,128}$"
+    },
+    "languageTag": {
+      "type": "string",
+      "pattern": "^[a-z]{2,3}(-[A-Za-z0-9]{2,8})*$"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    }
+  }
+}

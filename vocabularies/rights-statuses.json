@@ -1,0 +1,11 @@
+{
+  "id": "rights-statuses",
+  "version": "1.0.0",
+  "values": [
+    {"code": "PUBLIC_DOMAIN", "label": "Public domain", "requiresEvidence": true},
+    {"code": "LICENSED", "label": "Licensed", "requiresEvidence": true},
+    {"code": "PERMISSION_REQUIRED", "label": "Permission required", "requiresEvidence": false},
+    {"code": "RESTRICTED", "label": "Restricted", "requiresEvidence": true},
+    {"code": "UNKNOWN", "label": "Unknown", "requiresEvidence": false}
+  ]
+}

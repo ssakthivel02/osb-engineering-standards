@@ -1,0 +1,10 @@
+{
+  "rightsId": "rights:vel-article-001",
+  "status": "LICENSED",
+  "jurisdiction": "GB",
+  "licence": "CC-BY-4.0",
+  "embeddingPermission": "ALLOWED",
+  "trainingPermission": "REVIEW_REQUIRED",
+  "evidence": ["contract:contributor-agreement-001"],
+  "reviewedAt": "2026-07-28T00:00:00Z"
+}

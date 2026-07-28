@@ -1,0 +1,21 @@
+version: 1.0.0
+schemas:
+  - id: common-defs
+    path: schemas/common-defs.schema.json
+    draft: '2020-12'
+  - id: canonical-content
+    path: schemas/canonical-content.schema.json
+    draft: '2020-12'
+  - id: rights-record
+    path: schemas/rights-record.schema.json
+    draft: '2020-12'
+  - id: privacy-record
+    path: schemas/privacy-record.schema.json
+    draft: '2020-12'
+  - id: audit-event
+    path: schemas/audit-event.schema.json
+    draft: '2020-12'
+validation:
+  require_unique_ids: true
+  require_absolute_schema_ids: true
+  prohibit_additional_properties_by_default: true

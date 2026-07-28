@@ -1,0 +1,13 @@
+{
+  "id": "osb:content.murugan.vel",
+  "contentType": "DEVOTIONAL_ARTICLE",
+  "title": "The Vel in Murugan tradition",
+  "language": "en-GB",
+  "source": {"sourceId": "source:kanda-puranam-reviewed-edition"},
+  "editorialStatus": "VERIFIED",
+  "claims": [
+    {"type": "SCRIPTURAL", "citation": "source:kanda-puranam-reviewed-edition"}
+  ],
+  "rightsId": "rights:vel-article-001",
+  "privacyId": "privacy:public-content"
+}

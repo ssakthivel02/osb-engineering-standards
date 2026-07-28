@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.omsaravanabhava.org/privacy-record.schema.json",
+  "title": "OSB Privacy Record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["privacyId", "classification", "lawfulBasis", "retentionDecision"],
+  "properties": {
+    "privacyId": {"type": "string", "minLength": 1},
+    "classification": {"enum": ["PUBLIC", "INTERNAL", "CONFIDENTIAL", "RESTRICTED"]},
+    "containsPersonalData": {"type": "boolean"},
+    "containsChildrenData": {"type": "boolean"},
+    "containsReligiousBeliefData": {"type": "boolean"},
+    "lawfulBasis": {"enum": ["CONSENT", "CONTRACT", "LEGAL_OBLIGATION", "LEGITIMATE_INTERESTS", "VITAL_INTERESTS", "PUBLIC_TASK", "NOT_APPLICABLE", "REVIEW_REQUIRED"]},
+    "retentionDecision": {"type": "string", "minLength": 1},
+    "dpiaRequired": {"type": "boolean"}
+  }
+}

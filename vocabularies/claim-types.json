@@ -1,0 +1,14 @@
+{
+  "id": "claim-types",
+  "version": "1.0.0",
+  "values": [
+    {"code": "SCRIPTURAL", "requiresCitation": true},
+    {"code": "HISTORICAL", "requiresCitation": true},
+    {"code": "TRADITIONAL", "requiresCitation": true},
+    {"code": "ORAL_TRADITION", "requiresCitation": true},
+    {"code": "SCHOLARLY", "requiresCitation": true},
+    {"code": "EDITORIAL", "requiresCitation": false},
+    {"code": "MEDICAL", "requiresCitation": true, "requiresDisclaimer": true},
+    {"code": "FINANCIAL", "requiresCitation": true, "requiresDisclaimer": true}
+  ]
+}

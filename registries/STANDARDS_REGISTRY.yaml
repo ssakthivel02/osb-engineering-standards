@@ -1,0 +1,35 @@
+version: 1.0.0
+updated: 2026-07-28
+standards:
+  - id: OSB-CDS
+    title: Canonical Data Standard
+    status: approved-baseline
+    owner: platform-data
+  - id: OSB-MDS
+    title: Metadata Standard
+    status: approved-baseline
+    owner: data-governance
+  - id: OSB-ONT
+    title: Enterprise Ontology Standard
+    status: approved-baseline
+    owner: knowledge-architecture
+  - id: OSB-CV
+    title: Controlled Vocabulary Standard
+    status: approved-baseline
+    owner: information-architecture
+  - id: OSB-API
+    title: Enterprise API Standard
+    status: approved-baseline
+    owner: api-platform
+  - id: OSB-RAG
+    title: Retrieval and RAG Standard
+    status: approved-baseline
+    owner: ai-platform
+  - id: OSB-SEARCH
+    title: Enterprise Search Standard
+    status: approved-baseline
+    owner: search-platform
+  - id: OSB-COMPLIANCE
+    title: Compliance, Legal and Rights Standard
+    status: legal-review-required
+    owner: compliance

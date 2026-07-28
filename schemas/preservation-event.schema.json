@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.omsaravanabhava.org/preservation-event.schema.json",
+  "title": "OSB Preservation Event",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["eventId", "assetId", "eventType", "occurredAt", "agent", "outcome", "evidence"],
+  "properties": {
+    "eventId": {"type": "string", "format": "uuid"},
+    "assetId": {"type": "string", "minLength": 1},
+    "eventType": {"enum": ["ACQUISITION", "INGESTION", "VALIDATION", "VIRUS_SCAN", "HASHING", "OCR", "CORRECTION", "REDACTION", "MIGRATION", "TRANSFORMATION", "REVIEW", "PUBLICATION", "REPLICATION", "FIXITY_CHECK", "RECOVERY", "DELETION", "LEGAL_HOLD"]},
+    "occurredAt": {"type": "string", "format": "date-time"},
+    "agent": {"type": "string", "minLength": 1},
+    "tool": {"type": ["string", "null"]},
+    "toolVersion": {"type": ["string", "null"]},
+    "outcome": {"enum": ["SUCCESS", "FAILURE", "WARNING"]},
+    "sourceHash": {"type": ["string", "null"], "pattern": "^[a-f0-9]{64}$"},
+    "outputHash": {"type": ["string", "null"], "pattern": "^[a-f0-9]{64}$"},
+    "evidence": {"type": "array", "minItems": 1, "items": {"type": "string", "format": "uri"}},
+    "notes": {"type": ["string", "null"]}
+  }
+}

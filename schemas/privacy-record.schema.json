@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.omsaravanabhava.org/privacy-record.schema.json",
+  "title": "OSB Privacy Record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["privacyId", "subjectType", "classification", "purpose", "lawfulBasis", "retentionDecision", "reviewedAt"],
+  "properties": {
+    "privacyId": {"type": "string", "format": "uuid"},
+    "subjectType": {"enum": ["ADULT", "CHILD", "CONTRIBUTOR", "EMPLOYEE", "ANONYMOUS", "UNKNOWN"]},
+    "classification": {"enum": ["PUBLIC", "INTERNAL", "CONFIDENTIAL", "RESTRICTED"]},
+    "purpose": {"type": "string", "minLength": 3},
+    "lawfulBasis": {"enum": ["CONSENT", "CONTRACT", "LEGAL_OBLIGATION", "LEGITIMATE_INTERESTS", "VITAL_INTERESTS", "PUBLIC_TASK", "NOT_APPLICABLE", "REVIEW_REQUIRED"]},
+    "specialCategory": {"type": "boolean"},
+    "childData": {"type": "boolean"},
+    "internationalTransfer": {"type": "boolean"},
+    "retentionDecision": {"type": "string", "minLength": 3},
+    "deletionBlockedByLegalHold": {"type": "boolean"},
+    "reviewedAt": {"type": "string", "format": "date-time"},
+    "reviewer": {"type": ["string", "null"]},
+    "notes": {"type": ["string", "null"]}
+  }
+}
